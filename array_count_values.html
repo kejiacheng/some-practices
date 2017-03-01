@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   
+
+<script>
+arr = ["a","b","a","d","e","w",4,"g","m","r","r","e","f","s","a","u",5,"e",4,"f","v",3,"r","t",2,"w",5,7];
+
+Array.prototype.array_count_values = function(){
+	var new_arr  = [],
+		a = {};
+
+	for(var i=0;i<this.length;i++){
+		if(!a[this[i]]){
+			a[this[i]] = 1;
+			new_arr.push(this[i]);
+		}else{
+			a[this[i]] += 1;
+		}
+	}
+	return a;
+}
+console.log(arr.array_count_values());	
+</script>
+</body>
+</html>

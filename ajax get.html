@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   
+
+<script>
+
+var xhr = createXMLHttpRequest
+var url;
+xhr.open('get',url,false);
+
+xhr.onreadystatechange = function(){
+	if(xhr.readyState == 4 && xhr.status == 200){
+
+	}
+}
+
+xhr.send();
+
+function createXMLHttpRequest(){
+    var xhr;
+    try{
+        xhr = new XMLHttpRequest();
+    }
+    catch(e){
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return xhr;
+}
+</script>
+</body>
+</html>
