@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   
+
+<script>
+var data = {
+    name: 'xiaoming',
+    age: '18'
+};
+var template = "My name is {$name}, my age is {$age} {dsada}"
+
+function replace(template){
+    var arr = template.match(/{\$([^{}]+)}/g);
+
+    for(var i in arr){
+        template = template.replace(arr[i],data[arr[i].replace(/[{}\$]/g,'')]);
+    }
+    return template;
+}
+console.log(replace(template));
+</script>
+</body>
+</html>
