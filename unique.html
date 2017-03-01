@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   
+
+<script>
+var arr = [6,5,7,3,54,67,2,3,6,7];
+
+
+
+Array.prototype.quickSort = function(){
+
+    if(this.length <= 1){
+
+        return this;
+
+    }else{
+
+        var leftArray = [],
+
+            rightArray = [],
+
+            num = Math.floor((this.length)/2),
+
+            middleValue = this.splice(num,1);
+
+        for(var i = 0; i < this.length; i++){
+
+            if(this[i] > middleValue){
+
+                leftArray.push(this[i]);
+
+            }else{
+
+                rightArray.push(this[i]);
+
+            }
+
+        }
+
+        return leftArray.quickSort().concat(middleValue,rightArray.quickSort());
+
+    }
+
+}
+arr = arr.quickSort();
+
+function unique(arr){
+    var json = {};
+    var newArr = [];
+
+    arr.forEach(function(value,key,arr){
+        if(!json[value]){
+             json[value] = 1;
+             newArr.push(value);
+        }
+    })
+    return newArr;
+}
+
+arr = unique(arr);
+console.log(arr);
+
+</script>
+</body>
+</html>
