@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   <span class="pause">暂停</span>
+
+<script>
+	var pause = document.getElementsByClassName('pause')[0];
+	pause.isPause = true;
+	var i = 0;
+	var timer;
+
+	var add = function (){
+		if(pause.isPause){
+			pause.isPause = !pause.isPause;
+			timer = setInterval(function(){
+				console.log(i++);
+			},1000)
+		}else{
+			clearInterval(timer);
+			pause.isPause = !pause.isPause;
+		}
+	}
+
+
+	addEvents(pause,'click',add)
+
+	function addEvents(target,type,func){
+		if(target.addEventListener){
+			target.addEventListener(type,func,false);
+		}else if(target.attachEvent){
+			target.attachEvent("on",type,func);
+		}
+	}
+</script>
+</body>
+</html>
